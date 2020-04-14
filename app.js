@@ -5,6 +5,12 @@ app.use(express.static('public'));
 app.set('views', __dirname + '/public/views');
 app.set('view engine', 'ejs');
 
+app.use((req,res,next)=>{
+  const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
+  console.log(ip)
+  next()
+})
+
 app.get('/', (req, res) => {
   res.render('main.ejs');
 });
