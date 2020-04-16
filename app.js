@@ -8,7 +8,17 @@ app.set('view engine', 'ejs');
 
 app.use((req, res, next) => {
   const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
-  console.log(ip);
+  const data =
+    `ip : ${ip}, Encoding : ${req.defaultEncoding}, connection : ${req.headers.connection}\n` +
+    `OS, Web : ${req.rawHeaders[9]}\n` +
+    `method : ${req.method}\n`;
+
+  fs.appendFileSync(__dirname + '/log/serverLog.txt', data, (err) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+  });
   next();
 });
 
