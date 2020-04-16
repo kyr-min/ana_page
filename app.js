@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.use((req, res, next) => {
   const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
   const data =
-    `${Date()}\nip : ${ip}, Encoding : ${req.defaultEncoding}, url : ${req.url} \n` +
+    `${Date()}\nip : ${ip}, Encoding : ${req._readableState.defaultEncoding}, url : ${req.url} \n` +
     `OS, Web : ${req.rawHeaders[9]}\n` +
     `method : ${req.method}\n`;
 

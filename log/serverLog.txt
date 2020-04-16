@@ -1,0 +1,16 @@
+Thu Apr 16 2020 22:59:35 GMT+0900 (GMT+09:00)
+ip : ::1, Encoding : undefined, url : / 
+OS, Web : document
+method : GET
+Thu Apr 16 2020 22:59:36 GMT+0900 (GMT+09:00)
+ip : ::1, Encoding : undefined, url : /favicon.ico 
+OS, Web : image/webp,image/apng,image/*,*/*;q=0.8
+method : GET
+Thu Apr 16 2020 23:18:27 GMT+0900 (GMT+09:00)
+ip : ::1, Encoding : undefined, url : / 
+OS, Web : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36
+method : GET
+Thu Apr 16 2020 23:19:41 GMT+0900 (GMT+09:00)
+ip : ::1, Encoding : undefined, url : / 
+OS, Web : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36
+method : GET
