@@ -7,9 +7,16 @@ app.set('views', __dirname + '/public/views');
 app.set('view engine', 'ejs');
 
 app.use((req, res, next) => {
+  console.log(req.url);
+  if (req.url == '/favicon.ico') {
+    next();
+    return;
+  }
   const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
   const data =
-    `${Date()}\nip : ${ip}, Encoding : ${req._readableState.defaultEncoding}, url : ${req.url} \n` +
+    `${Date()}\nip : ${ip}, Encoding : ${
+      req._readableState.defaultEncoding
+    }, url : ${req.url} \n` +
     `OS, Web : ${req.rawHeaders[9]}\n` +
     `method : ${req.method}\n`;
 
