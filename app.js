@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const dotenv = require('dotenv');
 
 app.use(express.static('public'));
 app.set('views', __dirname + '/public/views');
 app.set('view engine', 'ejs');
+
+dotenv.config();
 
 app.use((req, res, next) => {
   console.log(req.url);
@@ -35,6 +38,14 @@ app.get('/', (req, res) => {
 
 app.get('/imsorry', (req, res) => {
   res.render('imsorry.ejs');
+});
+
+app.body('/android', (req, res) => {
+  if (req.body.password === process.env.ANDROID_PASSWORD) {
+    
+  } else {
+    res.sendStatus(404);
+  }
 });
 
 app.listen(3000, () => {
