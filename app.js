@@ -40,9 +40,8 @@ app.get('/imsorry', (req, res) => {
   res.render('imsorry.ejs');
 });
 
-app.body('/android', (req, res) => {
+app.post('/android', (req, res) => {
   if (req.body.password === process.env.ANDROID_PASSWORD) {
-    
   } else {
     res.sendStatus(404);
   }
