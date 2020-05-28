@@ -1,52 +1,84 @@
-const express = require('express');
-const app = express();
-const fs = require('fs');
-const dotenv = require('dotenv');
+const express = require('express')
+const app = express()
+// const dotenv = require('dotenv');
+// const bodyParser = require('body-parser');
+// const mongoose = require('mongoose');
+// const Log = require('./model/log');
+// const moment = require('moment-timezone');
 
-app.use(express.static('public'));
-app.set('views', __dirname + '/public/views');
-app.set('view engine', 'ejs');
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+app.use(express.static('public'))
+app.set('views', __dirname + '/public/views')
+app.set('view engine', 'ejs')
 
-dotenv.config();
+//dotenv.config();
 
-app.use((req, res, next) => {
-  console.log(req.url);
-  if (req.url == '/favicon.ico') {
-    next();
-    return;
-  }
-  const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
-  const data =
-    `${Date()}\nip : ${ip}, Encoding : ${
-      req._readableState.defaultEncoding
-    }, url : ${req.url} \n` +
-    `OS, Web : ${req.rawHeaders[9]}\n` +
-    `method : ${req.method}\n`;
+// moment.tz.setDefault('Asia/Seoul');
 
-  fs.appendFileSync(__dirname + '/log/serverLog.txt', data, (err) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-  });
-  next();
-});
+// mongoose.connect('mongodb://localhost/log', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+// async function logger(req, res, next) {
+//   if (req.url == '/favicon.ico') {
+//     next();
+//     return;
+//   }
+//   const data = {
+//     date: moment().format('YYYY-MM-DD HH:mm:ss'),
+//     ip: req.headers['x-real-ip'] || req.connection.remoteAddress,
+//     encoding: req._readableState.defaultEncoding,
+//     url: req.url,
+//     os: req.rawHeaders[9],
+//     method: req.method,
+//   };
+//   console.log(moment().format('YYYY-MM-DD HH:mm:ss'));
+//   try {
+//     await new Log(data).save();
+//   } catch (e) {
+//     console.log(e);
+//   }
+//   next();
+// }
+let title = 'AnA'
 
 app.get('/', (req, res) => {
-  res.render('main.ejs');
-});
+	title = 'AnA'
+	res.render('main', { title })
+})
+
+app.get('/about', (req, res) => {
+	title = 'About'
+	res.render('about', { title })
+})
+
+app.get('/curriculum', (req, res) => {
+	title = 'Curriculum'
+	res.render('curriculum', { title })
+})
+
+app.get('/members', (req, res) => {
+	title = 'Members'
+	res.render('members', { title })
+})
 
 app.get('/imsorry', (req, res) => {
-  res.render('imsorry.ejs');
-});
+	res.render('imsorry.ejs')
+})
 
-app.post('/android', (req, res) => {
-  if (req.body.password === process.env.ANDROID_PASSWORD) {
-  } else {
-    res.sendStatus(404);
-  }
-});
+// app.post('/android', async (req, res) => {
+//   const limit = req.body.limit || 20;
+//   console.log('here');
+//   if (req.body.password === process.env.ANDROID_PASSWORD) {
+//     const data = {
+//       data: await Log.find().sort({ date: -1 }).limit(limit),
+//     };
+//     res.json(data);
+//   }
+// });
 
 app.listen(3000, () => {
-  console.log('Server Running...');
-});
+	console.log('Server Running...')
+})
