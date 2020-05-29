@@ -1,3 +1,11 @@
-img {
+img.logo {
 	width: 3em;
+}
+
+img .pic {
+	width: 100vw;
+}
+
+html {
+	scroll-behavior: smooth;
 }

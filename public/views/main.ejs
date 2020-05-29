@@ -5,11 +5,35 @@
 		<script src="../scripts/main.js"></script>
 	</head>
 	<body>
-		<%- include('header') -%> 준비 중입니다.
+		<header><%- include('header') -%></header>
 
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<footer>
+		<div
+			id="carouselExampleSlidesOnly"
+			class="carousel slide"
+			data-ride="carousel"
+		>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src=../pictures/mainPage1.png alt="First
+					slide" />
+				</div>
+				<div class="carousel-item">
+					<img
+						class="d-block w-100"
+						src="../pictures/mainPage2.png"
+						alt="Second slide"
+					/>
+				</div>
+			</div>
+		</div>
+		<img src="../pictures/members.png" alt="members" id="members" class="pic" />
+		<img
+			src="../pictures/curriculum.png"
+			alt="curriculum"
+			id="curriculum"
+			class="pic"
+		/>
+		<footer class="page-footer font-small pt-4" id="footer">
 			<%- include('footer'); -%>
 		</footer>
 	</body>

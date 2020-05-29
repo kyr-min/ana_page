@@ -49,9 +49,9 @@ app.get('/', (req, res) => {
 	res.render('main', { title })
 })
 
-app.get('/about', (req, res) => {
-	title = 'About'
-	res.render('about', { title })
+app.get('/aboutUs', (req, res) => {
+	title = 'About Us'
+	res.render('aboutUs', { title })
 })
 
 app.get('/curriculum', (req, res) => {
