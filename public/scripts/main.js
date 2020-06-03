@@ -1,3 +1,4 @@
 function apply() {
-	alert('신청할 때가 아닙니다.')
+	const url = 'https://forms.gle/2mA2x6rU34TrK12B9'
+	location.href = url
 }
