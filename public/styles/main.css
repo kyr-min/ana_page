@@ -9,3 +9,14 @@ img .pic {
 html {
 	scroll-behavior: smooth;
 }
+
+/* #members{
+	float: inline-start;
+} */
+
+.desc {
+	float: right;
+	text-align: inherit;
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 3vh;
+}

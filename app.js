@@ -68,6 +68,11 @@ app.get('/imsorry', (req, res) => {
 	res.render('imsorry.ejs')
 })
 
+app.get('/um', (req, res) => {
+	title = "엄준식"
+	res.render('umjun.ejs', { title });
+})
+
 // app.post('/android', async (req, res) => {
 //   const limit = req.body.limit || 20;
 //   console.log('here');

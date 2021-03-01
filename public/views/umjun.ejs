@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../scripts/matter.js"></script>
+        <script src="../scripts/p5 (1).js"></script>
+        <script src="../scripts/ball.js"></script>
+        <script src="../scripts/boundary.js"></script>
+        <script>
+            var Engine = Matter.Engine,
+                World = Matter.World,
+                Body = Matter.Body,
+                Events = Matter.Events,
+                Bodies = Matter.Bodies;
+            var engine;
+            var world;
+            var box1;
+            var boxes = [];
+
+            var ground;
+
+            var img;
+
+            function setup() {
+                createCanvas(window.innerWidth, window.innerHeight);
+                engine = Engine.create();
+                world = engine.world;
+                Engine.run(engine);
+                ground = new Boundary(window.innerWidth /2, window.innerHeight, window.innerWidth, 10);
+                World.add(world, ground);
+            }
+
+                
+
+            function mouseDragged() {
+                boxes.push(new Ball(mouseX, mouseY, 20))
+            }
+            function mousePressed() {
+                boxes.push(new Ball(mouseX, mouseY, 20))
+            }
+
+            function draw() {
+                background(51);
+                for(var i = 0; i < boxes.length; i++){
+                    boxes[i].show();
+                }
+                ground.show();
+            }
+        </script>
+		<title><%= title %></title>
+	</head>
+	<body>
+        
+	</body>
+</html>

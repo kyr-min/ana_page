@@ -3,10 +3,12 @@
 	<head>
 		<%- include('head', title); -%>
 		<script src="../scripts/main.js"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header><%- include('header') -%></header>
-
+		
 		<div
 			id="carouselExampleSlidesOnly"
 			class="carousel slide"
@@ -27,17 +29,38 @@
 			</div>
 		</div>
 		<img
-			src="../pictures/members.png"
+			src="../pictures/anamembers.jpg"
 			alt="members"
 			id="members"
 			class="pic w-100"
+		/><br>
+		<img 
+			src="../pictures/Honeycam 2021-02-26 23-51-21.gif"
+			alt="umCap"
+			id="activity"
+			class="pic w-50"
 		/>
+		<div class="desc">
+			imgur api와 카카오 비전 api를 사용해 <br>
+			사진업로드, 얼굴인식을 하여 엄준식 모자를 옮기는 사이트입니다.<br>
+			엄준식 화이팅!
+		</div>
+		<img 
+			src="../pictures/Honeycam 2021-02-27 00-24-01.gif"
+			alt="codeBall"
+			class="pic w-50"
+		/>
+		<div class="desc">
+			2d물리엔진 Matter.js와 p5라이브러리를 사용해 <br>
+			코드를입력해 클리어하는 게임입니다.
+		</div>
 		<img
-			src="../pictures/curriculum.png"
+			src="../pictures/anacurriculum.jpg"
 			alt="curriculum"
 			id="curriculum"
 			class="pic w-100"
 		/>
+		
 		<footer class="page-footer font-small pt-4" id="footer">
 			<%- include('footer'); -%>
 		</footer>
